@@ -1,0 +1,108 @@
+/***************************************************************************************************/
+/****************************************** G.E.N.E.R.A.L ******************************************/
+/***************************************************************************************************/
+
+.section-primary
+    padding: 6rem 0
+    &--theme
+        background-color: $color-primary
+        *
+            color: #FFFFFF
+        .heading-secondary
+            background-color: #FFFFFF
+            color: $color-primary
+
+.section-light
+    background-color: $color-lightest
+
+.section-body
+    margin-top: 4rem
+
+.section-info
+    font-size: 16px
+    margin-top: 1.5rem
+    line-height: 1.7
+
+.section-heading
+    text-align: center
+
+.heading-primary
+    font-size: 32px
+    font-weight: 300
+
+.heading-page
+    text-align: center
+    margin-bottom: 3rem
+    text-transform: uppercase
+    letter-spacing: 1px
+
+.heading-secondary
+    display: inline-block
+    font-size: 26px
+    background-color: $color-primary
+    color: #FFFFFF
+    margin-bottom: 0
+    padding-right: .25rem
+    padding-left: .25rem
+
+.heading-large
+    font-size: 36px
+
+.link-underline
+    display: inline-block
+    color: $color-body
+    margin-top: 3rem
+    padding-bottom: .25rem
+    text-align: center
+    text-transform: uppercase
+    border-bottom: 2px solid $color-dark
+    &:hover
+        color: $color-primary
+        border-color: $color-primary
+    &-wrapper
+        text-align: center
+
+.underline-primary
+    display: inline-block
+    border-bottom: 4px solid $color-primary
+
+.btn-white,
+.btn-white:hover
+    background-color: #FFFFFF
+    color: $color-primary
+    border-color: #FFFFFF
+
+.block-primary
+    background-color: #FFFFFF
+    padding: 2rem
+    border: 1px solid $color-lighter
+    border-radius: $radius-primary
+    @include box-shadow($box-shadow-primary)
+    a
+        color: $color-body
+    &--collapsed
+        padding: 1rem
+    &__heading
+        position: relative
+        font-weight: bold
+        padding-bottom: .75rem
+        border-bottom: 2px solid $color-lightest
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            right: 0
+            bottom: 0
+            left: 0
+            width: 40%
+            height: 2px
+            background-color: $color-primary
+    &__body
+        margin-top: 1rem
+
+/***************************************************************************************************/
+/****************************************** G.E.N.E.R.A.L ******************************************/
+/***************************************************************************************************/

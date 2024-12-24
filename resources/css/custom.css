@@ -1,0 +1,64 @@
+/** Custom CSS **/
+
+.feature{
+    padding: 4rem 1rem;
+}
+.feature__heading{
+    font-size: 20px;
+    color: #557bc4;
+}
+.feature-btn{
+    font-family: system-ui;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 20px;
+}
+
+.hero-search div{
+    padding: 0;;
+}
+.hero-search input{
+    border-radius: 0;
+    border-left: 1px #ffc107 solid;
+    border-top: 1px #ffc107 solid;
+    border-bottom: 1px #ffc107 solid;
+    font-size: 14px;
+    padding: 10px;
+    height: 55px;
+}
+.hero-search button{
+    border-radius: 0;
+}
+.hero-search .hero__btn{
+    background-color: #ffc107;
+}
+
+.policy-area li{
+    list-style: none;
+    display: inline;
+    padding: 0 6px;
+}
+.policy-area li a{
+    color: #00BCD4;
+}
+
+.heading-breadcrumb{
+    text-align: center;
+    background-image: url(../images/header-banner-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 30px;
+}
+.heading-breadcrumb h1{
+    font-size: 32px;
+    color: #FFF;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.heading-breadcrumb ul li{
+    color: #FFF;
+    font-size: 14px;
+    font-family: sans-serif;
+}

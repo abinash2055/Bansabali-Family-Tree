@@ -1,0 +1,592 @@
+/***************************************************************************************************/
+/****************************************** G.E.N.E.R.A.L ******************************************/
+/***************************************************************************************************/
+
+
+
+/***************************************************************************************************/
+/***************************************** /.G.E.N.E.R.A.L *****************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/******************************************* N.A.V.B.A.R *******************************************/
+/***************************************************************************************************/
+
+.navbar
+    position: sticky
+    top: 0
+    right: 0
+    left: 0
+    z-index: 9
+    @include box-shadow($box-shadow-primary)
+
+/***************************************************************************************************/
+/****************************************** /.N.A.V.B.A.R ******************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/********************************************* H.E.R.O *********************************************/
+/***************************************************************************************************/
+
+.hero
+    @include display-flex
+    @include align-items(center)
+    background-size: cover
+    background-position: center center
+    min-height: 100vh
+    *
+        color: #FFFFFF
+    &__heading
+        font-size: 48px
+        span
+            font-weight: 300
+    &__text
+        font-size: 18px
+        font-weight: 300
+        max-width: 32rem
+        margin-top: 2rem
+        padding-top: .25rem
+        padding-bottom: .25rem
+        padding-left: 1rem
+        border-left: 2px solid #FFFFFF
+    &__btn
+        background-color: #FFFFFF
+        color: $color-primary
+
+/***************************************************************************************************/
+/******************************************** /.H.E.R.O ********************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/******************************************* M.E.M.B.E.R *******************************************/
+/***************************************************************************************************/
+
+.members-wrapper
+    margin: 0 !important
+
+.member
+    position: relative
+    top: 0
+    padding: 0
+    @include transition($transition-primary)
+    &:hover
+        top: -.5rem
+        .member__info
+            opacity: 1
+            visibility: visible
+    &__info
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: transparentize(#000000, .25)
+        padding: 1rem
+        @include display-flex
+        @include flex-direction(column)
+        @include align-items(center)
+        opacity: 0
+        visibility: hidden
+        @include transition($transition-primary)
+        *
+            color: #FFFFFF
+    &__name,
+    &__category
+        margin-top: auto
+    &__name
+        font-size: 18px
+        text-decoration: underline
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+/***************************************************************************************************/
+/****************************************** /.M.E.M.B.E.R ******************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/*************************************** C.A.T.E.G.O.R.I.E.S ***************************************/
+/***************************************************************************************************/
+
+.categories
+    &__selection
+        margin-top: 2rem
+        text-align: center
+        .btn-check:active + .btn, .btn-check:checked + .btn, .btn.active, .btn.show, .btn:active
+            background-color: $color-primary
+            border-color: $color-primary
+
+.category
+    position: relative
+    padding: 0
+    overflow: hidden
+    &:hover
+        .category__img
+            @include transform(scale(1.1))
+    &-wrapper
+        margin: 0
+        margin-top: 2rem
+    &__info
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-image: linear-gradient(transparentize(#000000, .95), transparentize(#000000, .5))
+        padding: 1rem
+        text-align: center
+        @include display-flex
+        @include flex-direction(column)
+        *
+            color: #FFFFFF
+    &__heading
+        margin-top: auto
+    &__subheading
+        font-size: 13px
+        margin-top: .5rem
+        color: $color-lighter
+    &__heading
+        font-size: 16px
+        font-weight: 700
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        @include transition($transition-primary)
+
+/***************************************************************************************************/
+/************************************** /.C.A.T.E.G.O.R.I.E.S **************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/******************************* C.T.A - R.E.G.I.S.T.E.R - S.T.A.R.T *******************************/
+/***************************************************************************************************/
+
+.cta-register
+    &__left
+        @media #{$md-screen-and-down}
+            height: 12rem
+    &__right
+        background-color: $color-primary
+    &__block
+        position: relative
+        // left: -4rem
+        background-color: #FFFFFF
+        padding: 3rem 2.5rem
+        border-radius: $radius-primary
+        &-wrapper
+            padding: 4rem 1rem
+    &__info
+        margin-top: 1.5rem
+        line-height: 1.8
+
+/***************************************************************************************************/
+/****************************** /.C.T.A - R.E.G.I.S.T.E.R - S.T.A.R.T ******************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/***************************************** F.E.A.T.U.R.E.S *****************************************/
+/***************************************************************************************************/
+
+.features
+    .section-body
+        margin-top: 6rem
+
+.feature
+    margin-bottom: 5rem
+    border: 1px solid $color-lighter
+    text-align: center
+    padding: 1.5rem 3rem
+    @media #{$lg-screen-and-up}
+        margin-bottom: 0
+    &:hover
+        .feature__icon-circle--left
+            left: 3rem
+        .feature__icon-circle--main
+            @include transform(scale(1.1))
+        .feature__icon-circle--right
+            right: 3rem
+    &__icon
+        display: inline-flex
+        margin-top: -5rem
+        &--blue
+            .feature__icon-circle--shadow
+                background: transparentize($color-primary, .7)
+            .feature__icon-circle--main
+                background: $color-primary
+        &--green
+            .feature__icon-circle--shadow
+                background: transparentize(#3EBDB6, .7)
+            .feature__icon-circle--main
+                background: #3EBDB6
+        &--red
+            .feature__icon-circle--shadow
+                background: transparentize(#E17055, .7)
+            .feature__icon-circle--main
+                background: #E17055
+        &-circle
+            position: relative
+            width: 5rem
+            height: 5rem
+            border-radius: 50%
+            @include transition($transition-primary)
+            &--main
+                @extend %flex-center
+                i
+                    font-size: 32px
+                    color: #FFFFFF
+            &--left
+                left: 3.5rem
+            &--right
+                right: 3.5rem
+    &__body
+    &__heading
+        margin-top: 1rem
+    &__text
+        font-size: 14px
+
+/***************************************************************************************************/
+/**************************************** /.F.E.A.T.U.R.E.S ****************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/******************************************* E.V.E.N.T.S *******************************************/
+/***************************************************************************************************/
+
+.events
+    position: relative
+    text-align: center
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: transparentize($color-primary, .1)
+    *
+        position: relative
+        color: #FFFFFF
+    .heading-primary
+        font-size: 40px
+    .heading-secondary
+        font-size: 34px
+        background-color: #FFFFFF
+        color: $color-primary
+    .btn
+        color: $color-primary
+        margin-top: 1.5rem
+
+/***************************************************************************************************/
+/****************************************** /.E.V.E.N.T.S ******************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/******************************************** B.L.O.G.S ********************************************/
+/***************************************************************************************************/
+
+.blog
+    margin-bottom: 1.5rem
+    @include box-shadow($box-shadow-primary)
+    &:hover
+        .blog__img img
+            @include transform(scale(1.1))
+    &__img
+        height: 12rem
+        overflow: hidden
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            @include transition($transition-primary)
+    &__footer
+        background-color: $color-lightest
+        padding: 1rem
+        *
+            color: $color-body
+    &__heading
+        font-size: 16px
+        font-weight: 700
+    &__subheading
+        font-size: 12px
+        margin-top: .25rem
+    &__heading,
+    &__subheading
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+/***************************************************************************************************/
+/******************************************* /.B.L.O.G.S *******************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/****************************************** P.R.O.F.I.L.E ******************************************/
+/***************************************************************************************************/
+
+.cover
+    position: relative
+    padding: 2rem 0
+    text-align: center
+    @media #{$md-screen-and-up}
+        text-align: left
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: transparentize($color-secondary, .5)
+    *
+        position: relative
+        color: #FFFFFF
+    .container
+        @media #{$lg-screen-and-up}
+            @include transform(translateY(7rem))
+    &__display
+        img
+            display: block
+            width: 10rem
+            margin: auto
+            margin-bottom: 1.5rem
+            border-radius: $radius-primary
+            @media #{$md-screen-and-up}
+                margin-bottom: 0
+                width: unset
+    &__name
+        font-size: 28px
+    &__list
+        @include display-flex
+        @include justify-content(center)
+        margin: auto !important
+        @media #{$md-screen-and-up}
+            @include justify-content(flex-start)
+        li
+            &:not(:last-child)
+                &::after
+                    content: '.'
+                    display: inline-block
+                    margin: 0 .5rem
+    &__tag
+        display: inline-block
+        font-size: 12px
+        background: transparentize($color-secondary, .5)
+        margin-top: 1rem
+        padding: .25rem .5rem
+        border-radius: $radius-primary
+
+.profile-links
+    border-bottom: 1px solid $color-lighter
+    &__list
+        @include display-flex
+        overflow-x: scroll
+        li
+            // &:not(:last-child)
+            a
+                display: block
+                font-weight: bold
+                color: $color-body
+                padding: 1.25rem 1rem
+                &.active
+                    border-bottom: 2px solid $color-primary
+
+/***************************************************************************************************/
+/***************************************** /.P.R.O.F.I.L.E *****************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/******************************************* F.O.O.T.E.R *******************************************/
+/***************************************************************************************************/
+
+.footer
+    background-color: $color-secondary
+    padding-bottom: 0
+    *
+        color: #FFFFFF
+    &__title
+        font-size: 18px
+    &__links
+        margin-bottom: 2rem !important
+        li
+            &:not(:last-child)
+                margin-bottom: .25rem
+            a
+                color: lighten($color-primary, 30%)
+    &__block
+        position: relative
+        background-color: lighten($color-secondary, 8%)
+        padding: 2rem
+        border-top-left-radius: 4rem
+        border-bottom-right-radius: 4rem
+        &-pin
+            position: absolute
+            width: .5rem
+            height: .5rem
+            background-color: $color-secondary
+            border-radius: 50%
+            &--top
+                top: .5rem
+                right: .5rem
+            &--bottom
+                bottom: .5rem
+                left: .5rem
+        p
+            margin-bottom: 0
+            text-align: right
+    &__subscribe
+        margin-top: 2.5rem
+    &__social
+        @include display-flex
+        @include justify-content(flex-end)
+        @include align-items(center)
+        margin-top: 1rem
+        @media #{$md-screen-and-up}
+            margin-top: 3rem
+        ul
+            @include display-flex
+            li
+                &:not(:last-child)
+                    margin-right: .75rem
+                i
+                    font-size: 18px
+    &__copyright
+        font-size: 13px
+        margin-top: 2rem
+        padding: 1rem 0
+        border-top: 1px solid lighten($color-secondary, 8%)
+        &-right
+            text-align: right
+                    
+
+/***************************************************************************************************/
+/****************************************** /.F.O.O.T.E.R ******************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/********************************************* M.I.S.C *********************************************/
+/***************************************************************************************************/
+
+.user-list
+    li
+        &:not(:last-child)
+            margin-bottom: .5rem
+        a
+            display: block
+            color: $color-body
+    &__each
+        display: flex !important
+        @include align-items(center)
+        padding: .5rem .5rem
+        border-radius: $radius-primary
+        @include transition($transition-primary)
+        &:hover
+            background-color: $color-lightest
+    &__img
+        width: 3rem
+        height: 3rem
+        margin-right: .75rem
+        object-fit: cover
+        border-radius: 50%
+    &__name
+        font-weight: bold
+        margin-bottom: .25rem
+    &__helper
+        font-size: 12px
+        color: $color-dark
+
+/***************************************************************************************************/
+/******************************************** /.M.I.S.C ********************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/********************************************* B.L.O.G *********************************************/
+/***************************************************************************************************/
+
+.blog-each
+    margin-bottom: 1.5rem
+    border: 1px solid $color-lighter
+    @include box-shadow($box-shadow-primary)
+    &__title
+        font-size: 22px
+        font-weight: 700
+        margin-bottom: .5rem
+    &__helper
+        font-size: 13px
+    &__img
+        img
+            width: 100%
+            height: 14rem
+            object-fit: cover
+    &__body,
+    &__footer
+        padding: 2rem 1.5rem
+    &__body
+        .link-underline
+            margin-top: 1.5rem
+    &__footer
+        padding-top: 1rem
+        padding-bottom: 1rem
+        border-top: 1px solid $color-lighter
+        @include display-flex
+        @include align-items(center)
+        &--right
+            margin-left: auto
+    
+
+/***************************************************************************************************/
+/******************************************** /.B.L.O.G ********************************************/
+/***************************************************************************************************/
+
+/***************************************************************************************************/
+/************************************** M.E.M.B.E.R - C.A.R.D **************************************/
+/***************************************************************************************************/
+
+.member-card
+    @include box-shadow($box-shadow-primary)
+    position: relative
+    margin-bottom: 1.5rem
+    border-radius: $radius-primary
+    overflow: hidden
+    @include transition($transition-primary)
+    &:hover
+        // top: -1rem
+        @include transform(translateY(-.75rem))
+        .member-card__img
+            &::before
+                background: transparentize(#FFFFFF, .9)
+    &__img
+        position: relative
+        img
+            width: 100%
+            height: 16rem
+            object-fit: cover
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            z-index: 1
+            @include transition($transition-primary)
+    &__footer
+        background-color: $color-lightest
+        color: $color-body
+        padding: 1rem
+        text-align: center
+    &__name
+        font-weight: bold
+        font-size: 16px
+        color: $color-body
+    &__category
+        color: $color-dark
+        margin-top: .25rem
+
+/***************************************************************************************************/
+/************************************* /.M.E.M.B.E.R - C.A.R.D *************************************/
+/***************************************************************************************************/

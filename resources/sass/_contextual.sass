@@ -1,0 +1,167 @@
+/***************************************************************************************************/
+/*************************************** C.O.N.T.E.X.T.U.A.L ***************************************/
+/***************************************************************************************************/
+
+// F.L.O.A.T
+.clear-float,
+.clear-fix,
+.clear
+	&:before,
+	&:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+
+.float-left
+	float: left
+
+.float-right
+	float: right
+
+// H.E.I.G.H.T - A.N.D - W.I.D.T.H
+.fluid-height
+	height: 100%
+
+.fluid-height-min
+	min-height: 100%
+
+.fluid-width
+	width: 100% !important
+
+.fluid-width-min
+	min-width: 100%	
+
+// M.A.R.G.I.N - A.N.D - P.A.D.D.I.N.G
+.no-margin,
+.m-0
+	margin: 0 !important
+
+.no-padding,
+.p-0
+	padding: 0 !important
+
+// T.E.X.T - A.N.D - A.L.I.G.N.M.E.N.T
+.text-info
+	display: block
+	font-size: 12px
+	margin-top: .5rem
+
+.text-left,
+.align-left
+	text-align: left
+
+.text-center,
+.align-center
+	text-align: center
+
+.text-right,
+.align-right
+	text-align: right
+
+.text-ellipsis
+	display: block
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+
+.uppercase,
+.text-uppercase
+	text-transform: uppercase
+
+.lowercase,
+.text-lowercase
+	text-transform: lowercase
+
+.capitalize,
+.text-capitalize
+	text-transform: capitalize
+
+// D.I.S.P.L.A.Y
+.hidden
+	display: none
+
+.invisible
+	visibility: hidden !important
+	opacity: 0 !important
+	$opacity-ie: 0
+
+.visible
+	visibility: visible !important
+	opacity: 1 !important
+	$opacity-ie: 1
+
+.remove,
+.hide
+	display: none
+
+.d-flex
+	@include display-flex
+
+.d-flex-center
+	@include display-flex
+	@include justify-content(center)
+	@include align-items(center)
+
+// B.A.C.K.G.R.O.U.N.D - A.N.D - C.O.L.O.R
+.color-primary
+	color: $color-primary
+
+.color-success
+	color: $color-success-darker
+
+.color-error
+	color: $color-error
+
+.bg-lightest
+	background-color: lighten($color-lightest, 2%)
+
+.bg-cover
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+
+// G.R.I.D
+.stretch
+	margin-right: -.75rem
+	margin-left: -.75rem
+
+// M.I.S.C
+.img-fluid
+	display: block
+	max-width: 100%
+	height: auto
+
+.img-centered
+	display: block
+	max-width: 100%
+	max-height: 100%
+	margin: auto
+
+.cursor-pointer
+	cursor: pointer
+	padding: 0 !important
+
+ul.clean
+	list-style: none
+	margin: 0
+	padding: 0
+
+.relative
+	position: relative
+
+.transition-primary
+	@include transition($transition-primary)
+
+.box-shadow-primary
+	@include box-shadow($box-shadow-primary)
+
+// L.i.n.k.s
+.link-primary
+	color: $color-primary
+	&:hover
+		color: darken($color-primary, 5%)
+
+/***************************************************************************************************/
+/*************************************** C.O.N.T.E.X.T.U.A.L ***************************************/
+/***************************************************************************************************/
