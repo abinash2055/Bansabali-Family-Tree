@@ -5,8 +5,7 @@
                 <div class="row">
                     <div class="col-6 col-xl-5">
                         <p class="footer__title">Shrestha Samaj Banshawali</p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel, suscipit optio
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel, suscipit optio
                             eligendi placeat temporibus, quasi, assumenda dolorem doloribus. Lorem ipsum dolor sit amet
                             consectetur adipisicing elit.
                             <a href="#" class="btn btn-secondary btn-sm feature-btn">Know More &nbsp; <i
@@ -15,17 +14,18 @@
                     </div>
                     <div class="col-6 col-xl-5">
                         <p class="footer__title">Join Us on Facebook</p>
+                        <!-- <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcambridgeinfotech.com.np%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=166378800774076" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
                     </div>
                     <div class="col-6 col-xl-2">
                         <p class="footer__title">Company</p>
                         <ul class="clean footer__links">
-                            <li><a href="{{ url('about') }}">About us</a></li>
-                            <li><a href="{{ url('search-member') }}">Members</a></li>
-                            <li><a href="{{ url('culture') }}">Our Culture</a></li>
-                            <li><a href="{{ url('blogs') }}">News & Event</a></li>
-                            <li><a href="{{ url('members') }}">Gallery</a></li>
+                            <li><a href="about.php">About us</a></li>
+                            <li><a href="search-member.php">Members</a></li>
+                            <li><a href="culture.php">Our Culture</a></li>
+                            <li><a href="blogs.php">News & Event</a></li>
+                            <li><a href="members.php">Gallery</a></li>
                             <li><a href="#">FAQ's</a></li>
-                            <li><a href="{{ url('contact') }}">Contact us</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,9 +67,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">&copy; Copyright @Shrestha Banshawali 2020-2023</div>
-                <div class="col-4 footer__copyright-left">
-                    Developed by: <a href="https://www.robustintech.com" target="_blank">Robust Info Tech Pvt. Ltd.</a>
-                </div>
+                <div class="col-4 footer__copyright-left">Developed by: <a href="https://www.robustintech.com"
+                        target="_blank">Robust Info Tech Pvt. Ltd.</a></div>
                 <div class="col-4">
                     <ul class="policy-area">
                         <li><a href="#">Privacy Policy</a></li>

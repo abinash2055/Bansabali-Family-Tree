@@ -1,0 +1,152 @@
+@mixin box-sizing($value)
+	-webkit-box-sizing: $value
+	box-sizing: $value
+
+@mixin box-shadow($value)
+	-webkit-box-shadow: $value
+	box-shadow: $value
+
+@mixin display-flex
+	display: -webkit-box
+	display: -ms-flexbox
+	display: flex
+
+@mixin flex($value)
+	-webkit-box-flex: #{$value}
+	-webkit-flex: #{$value}
+	-ms-flex: #{$value}
+	flex: #{$value}
+
+@mixin flex-direction($value)
+	@if $value == row
+		-webkit-box-orient: horizontal
+	@else if $value == column
+		-webkit-box-orient: vertical
+	-webkit-box-direction: normal
+	-ms-flex-direction: $value
+	flex-direction: $value
+
+@mixin flex-flow($value)
+	@if $value == row
+		-webkit-box-orient: horizontal
+	@else if $value == column
+		-webkit-box-orient: vertical
+	-webkit-box-direction: normal
+	-ms-flex-direction: $value
+	flex-direction: $value
+
+@mixin flex-grow($value)
+	-webkit-box-flex: $value
+	-ms-flex-positive: $value
+	flex-grow: $value
+
+@mixin flex-basis($value)
+	-ms-flex-preferred-size: $value
+	flex-basis: $value
+
+@mixin flex-wrap($value)
+	-ms-flex-wrap: $value
+	flex-wrap: $value
+
+@mixin align-self($value)
+	-ms-flex-item-align: $value
+	-ms-grid-row-align: $value
+	align-self: $value
+
+@mixin align-items($value)
+	-webkit-box-align: $value
+	-ms-flex-align: $value
+	align-items: $value
+
+@mixin justify-content($value)
+	-webkit-box-pack: $value
+	-ms-flex-pack: $value
+	justify-content: $value
+
+@mixin user-select($value)
+	-webkit-user-select: $value
+	-moz-user-select: $value
+	-ms-user-select: $value
+	user-select: $value
+
+@mixin transition($value)
+	-webkit-transition: $value
+	-o-transition: $value
+	transition: $value
+
+@mixin transform($value)
+	-webkit-transform: $value
+	-ms-transform: $value
+	transform: $value
+
+@mixin keyframes($value)
+	@-webkit-keyframes #{$value}
+		@content
+	@-moz-keyframes #{$value}
+		@content
+	@-ms-keyframes #{$value}
+		@content
+	@-o-keyframes #{$value}
+		@content
+	@keyframes #{$value}
+		@content
+
+@mixin animation($value)
+	-webkit-animation: #{$value}
+	animation: #{$value}
+
+@mixin selection
+	::-moz-selection
+		background-color: $color-primary
+		color: #FFFFFF
+	::selection
+		background-color: $color-primary
+		color: #FFFFFF
+
+
+// T.O - B.E - C.H.E.C.K.E.D
+
+@mixin linear-gradient($angle, $color-stops...)
+	$_angle-with-vendor-prefix: ""
+	$_angle: ""
+	@if $angle == "to top" or $angle == "bottom"
+		$_angle-with-vendor-prefix: bottom
+		$_angle: to top
+	@else if $angle == "to right" or $angle == "left"
+		$_angle-with-vendor-prefix: left
+		$_angle: to right
+	@else if $angle == "to bottom" or $angle == "top"
+		$_angle-with-vendor-prefix: top
+		$_angle: to bottom
+	@else if $angle == "to left" or $angle == "right"
+		$_angle-with-vendor-prefix: right
+		$_angle: to left
+	@else if $angle == "to top right" or $angle == "bottom left"
+		$_angle-with-vendor-prefix: bottom left
+		$_angle: to top right
+	@else if $angle == "to bottom right" or $angle == "top left"
+		$_angle-with-vendor-prefix: top left
+		$_angle: to bottom right
+	@else if $angle == "to bottom left" or $angle == "top right"
+		$_angle-with-vendor-prefix: top right
+		$_angle: to bottom left
+	@else if $angle == "to top left" or $angle == "bottom right"
+		$_angle-with-vendor-prefix: bottom right
+		$_angle: to top left
+	@else
+		$_angle-with-vendor-prefix: $angle
+		$_angle: $angle
+
+	background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops)
+	background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops)
+	background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops)
+	background: linear-gradient($_angle, $color-stops)
+
+@mixin radial-gradient($from, $to)
+	background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%)
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to))
+	background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%)
+	background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%)
+	background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%)
+	background: radial-gradient(center, circle cover, $from 0%, $to 100%)
+	background-color: $from
