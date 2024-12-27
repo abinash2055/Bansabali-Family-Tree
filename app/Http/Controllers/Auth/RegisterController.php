@@ -33,7 +33,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-            'number' => 'required|number|confirmed',
+            'number' => 'required|numeric|confirmed',
         ]);
 
         if ($validator->fails()) {

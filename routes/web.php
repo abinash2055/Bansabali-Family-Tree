@@ -40,8 +40,8 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
     // FOR REGISTRATION
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register']);
+Route::get('signup', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('signup', [RegisterController::class, 'register']);
 
     // FOR EMAIL VERIFICATION ACTION
 Route::get('email/verify', [VerifyController::class, 'show'])->name('verification.notice');
