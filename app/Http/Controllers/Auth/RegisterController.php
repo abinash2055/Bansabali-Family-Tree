@@ -34,6 +34,7 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
             'number' => 'required|numeric|confirmed',
+            'gender' => 'required|confirmed'
         ]);
 
         if ($validator->fails()) {
@@ -45,6 +46,7 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'number' => $request->number,
+            'gender' => $request,
         ]);
 
         event(new Registered($user));

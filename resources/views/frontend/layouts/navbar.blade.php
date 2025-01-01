@@ -33,7 +33,7 @@
                         Welcome User
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                         <li><a class="dropdown-item" href="#">Update Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -44,9 +44,9 @@
             </ul>
 
             <!-- Search Form -->
-            {{-- <form method="GET" action="#" class="d-flex me-3" role="search">
+            <form method="GET" action="#" class="d-flex me-3" role="search">
                 <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-            </form> --}}
+            </form>
 
             <!-- Log In and Sign Up Buttons -->
             <div class="d-flex">

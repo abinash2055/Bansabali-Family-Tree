@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\VerifyController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\PasswordUpdateController;
 use App\Http\Controllers\Auth\PasswordConfirmController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Public\WebController;
 
 
@@ -35,6 +36,18 @@ Route::get('/contact', [WebController::class, 'contact'])->name('contact');
     // FOR LOGIN
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
+
+    // FOR FORGOT PASSWORD
+Route::get('/forgot/password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('/forgot/password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+    // FOR PROFILE DASHBOARD PAGE
+Route::get('/dashboard', function () {
+    $pageName = 'profile';  
+    return view('frontend.profiles.profile', compact('pageName'));
+})->name('dashboard');
+
+
 
     // LOGOUT
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');

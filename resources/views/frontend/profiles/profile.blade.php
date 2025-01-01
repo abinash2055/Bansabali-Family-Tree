@@ -1,25 +1,23 @@
 @extends('frontend.layouts.main')
 
 
-@extends('layouts.app')
-
 @section('content')
     <!-- COVER - START -->
-    <div class="cover bg-cover" style="background-image: url('{{ asset('images/profile-cover.jpg') }}')">
+    <div class="cover bg-cover" style="background-image: url('assets/frontend/images/profile-cover.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-3">
                     <div class="cover__display">
-                        <img src="{{ asset('images/profile-display.jpg') }}" class="img-fluid" alt="Display">
+                        <img src="assets/frontend/images/profile-display.jpg" class="img-fluid" alt="Display">
                     </div>
                 </div>
                 <div class="col-12 col-md-9">
                     <div class="cover__profile">
                         <small class="cover__username">@montal</small>
-                        <h1 class="cover__name">Name</h1>
+                        <h1 class="cover__name">Montal Ellis</h1>
                         <ul class="clean cover__list">
-                            <li>Age</li>
-                            <li>Passion</li>
+                            <li>29</li>
+                            <li>Sport</li>
                         </ul>
                         <div class="cover__tag">2 years ago</div>
                     </div>
@@ -28,7 +26,6 @@
         </div>
     </div>
     <!-- COVER - END -->
-
     <!-- PROFILE - LINKS - START -->
     <div class="profile-links">
         <div class="container">
@@ -36,7 +33,9 @@
                 <div class="col-4 col-lg-3"></div>
                 <div class="col-12 col-lg-9">
                     <ul class="clean profile-links__list">
-                        <li><a href="#" class="{{ $pageName === 'profile' ? 'active' : '' }}">Profile</a></li>
+                        <li><a href="#" class="<?php if ($pageName === 'profile') {
+                            echo 'active';
+                        } ?>">Profile</a></li>
                         <li><a href="#">Activity</a></li>
                         <li><a href="#">Family</a></li>
                         <li><a href="#">Groups</a></li>
@@ -48,7 +47,6 @@
         </div>
     </div>
     <!-- PROFILE - LINKS - END -->
-
     <!-- PROFILE - BODY - START -->
     <div class="profile-body section-primary">
         <div class="container">
@@ -73,17 +71,17 @@
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+                            <div class="tab-pane ade show active" id="pills-profile" role="tabpanel"
                                 aria-labelledby="pills-profile-tab" tabindex="0">
                                 <table class="table">
                                     <tbody>
                                         <tr>
                                             <th scope="row" width="300" class="uppercase">Name</th>
-                                            <td>Name1</td>
+                                            <td>Montal Ellis</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Birthdate</th>
-                                            <td>DOB 1</td>
+                                            <td>20 July, 1992</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Gender</th>
@@ -91,15 +89,15 @@
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Country</th>
-                                            <td>Nepal</td>
+                                            <td>United States</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">City</th>
-                                            <td>Kathmandu</td>
+                                            <td>New York</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Passion</th>
-                                            <td>Actor</td>
+                                            <td>Sport</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -110,15 +108,15 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row" width="300" class="uppercase">Height</th>
-                                            <td>5 Feet 6 inches</td>
+                                            <td>5 feet 10 inch</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Weight</th>
-                                            <td>45</td>
+                                            <td>70 Kg</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Complexion</th>
-                                            <td>Light Skin</td>
+                                            <td>Fair</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -129,23 +127,23 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row" width="300" class="uppercase">Primary Language</th>
-                                            <td>Nepali</td>
+                                            <td>Newari</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Ethnicity</th>
-                                            <td>Asian</td>
+                                            <td>Newar</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Drinks</th>
-                                            <td>Soft Drinks</td>
+                                            <td>Never</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Smokes</th>
-                                            <td>No</td>
+                                            <td>Sometimes</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Education</th>
-                                            <td>Bachelors</td>
+                                            <td>University</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Pets</th>
@@ -162,19 +160,56 @@
                         <div class="block-primary__heading">Recent members</div>
                         <div class="block-primary__body">
                             <ul class="clean user-list">
-                                @foreach ($recentMembers as $member)
-                                    <li>
-                                        <a href="#" class="user-list__each">
-                                            <img src="{{ asset('images/members/' . $member->image) }}" alt="Member"
-                                                class="user-list__img">
-                                            <div class="user-list__info">
-                                                <div class="user-list__name">Phuyal</div>
-                                                <div class="user-list__helper">Created At
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endforeach
+                                <li>
+                                    <a href="#" class="user-list__each">
+                                        <img src="assets/frontend/images/members/member-01.jpg" alt="Member"
+                                            class="user-list__img">
+                                        <div class="user-list__info">
+                                            <div class="user-list__name">Wynonn Judd</div>
+                                            <div class="user-list__helper">2 days ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="user-list__each">
+                                        <img src="assets/frontend/images/members/member-02.jpg" alt="Member"
+                                            class="user-list__img">
+                                        <div class="user-list__info">
+                                            <div class="user-list__name">Dana Cortese</div>
+                                            <div class="user-list__helper">5 days ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="user-list__each">
+                                        <img src="assets/frontend/images/members/member-03.jpg" alt="Member"
+                                            class="user-list__img">
+                                        <div class="user-list__info">
+                                            <div class="user-list__name">Chynna Phillips</div>
+                                            <div class="user-list__helper">A week ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="user-list__each">
+                                        <img src="assets/frontend/images/members/member-05.jpg" alt="Member"
+                                            class="user-list__img">
+                                        <div class="user-list__info">
+                                            <div class="user-list__name">Tommy Hilfiger</div>
+                                            <div class="user-list__helper">A week ago</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="user-list__each">
+                                        <img src="assets/frontend/images/members/member-06.jpg" alt="Member"
+                                            class="user-list__img">
+                                        <div class="user-list__info">
+                                            <div class="user-list__name">Russel Peters</div>
+                                            <div class="user-list__helper">A week ago</div>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -206,13 +241,12 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- PROFILE - BODY - END -->
-
-    @include('frontend.layouts.footer')
 
     @include('frontend.layouts.script')
 @endsection
