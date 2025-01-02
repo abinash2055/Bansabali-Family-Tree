@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\PasswordUpdateController;
 use App\Http\Controllers\Auth\PasswordConfirmController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Public\WebController;
 
 
@@ -47,6 +48,13 @@ Route::get('/dashboard', function () {
     return view('frontend.profiles.profile', compact('pageName'));
 })->name('dashboard');
 
+
+    // FOR PROFILE UPDATE PAGE
+Route::middleware('auth')->group(function () {
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profiles.edit');
+    Route::post('/profile/edit', [ProfileController::class, 'update']);
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profiles.profile');
+});
 
 
     // LOGOUT

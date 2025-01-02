@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Auth\Events\Registered;
 
@@ -33,24 +35,24 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-            'number' => 'required|numeric|confirmed',
-            'gender' => 'required|confirmed'
+            'number' => 'required|numeric|digits_between:8,15',
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        // Create user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'number' => $request->number,
-            'gender' => $request,
         ]);
-
+        
         event(new Registered($user));
 
-        return redirect()->route('login')->with('status', 'Registration successful! Please verify your email.');
+        Alert::success('Registration successfull !!', 'Please verify your email.'); 
+        return redirect()->route('login');
     }
 }

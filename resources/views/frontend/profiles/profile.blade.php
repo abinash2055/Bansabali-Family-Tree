@@ -8,24 +8,24 @@
             <div class="row">
                 <div class="col-12 col-md-3">
                     <div class="cover__display">
-                        <img src="assets/frontend/images/profile-display.jpg" class="img-fluid" alt="Display">
+                        <img src={{ $user->profile_picture ? asset('storage/' . $user->profile_picture) : asset('assets/frontend/images/profile-display.jpg') }}
+                            class="img-fluid" alt="Display">
                     </div>
                 </div>
                 <div class="col-12 col-md-9">
                     <div class="cover__profile">
-                        <small class="cover__username">@montal</small>
-                        <h1 class="cover__name">Montal Ellis</h1>
+                        <h1 class="cover__name">{{ $user->name }}</h1>
                         <ul class="clean cover__list">
-                            <li>29</li>
-                            <li>Sport</li>
+                            <li>{{ \Carbon\Carbon::parse($user->birthdate)->format('d F, Y') }}</li>
+                            <li>{{ $user->passion }}</li>
                         </ul>
-                        <div class="cover__tag">2 years ago</div>
+                        <div class="cover__tag">{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- COVER - END -->
+
     <!-- PROFILE - LINKS - START -->
     <div class="profile-links">
         <div class="container">
@@ -41,14 +41,16 @@
                         <li><a href="#">Groups</a></li>
                         <li><a href="#">Forums</a></li>
                         <li><a href="#">Media</a></li>
+                        <li><a href="{{ route('profiles.edit') }}">Edit Profile</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- PROFILE - LINKS - END -->
+
     <!-- PROFILE - BODY - START -->
-    <div class="profile-body section-primary">
+    <div class="profile-body
+                                section-primary">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-8 col-xxl-9">
@@ -76,28 +78,29 @@
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <th scope="row" width="300" class="uppercase">Name</th>
-                                            <td>Montal Ellis</td>
+                                            <th scope="row" width="300" class="uppercase">Name
+                                            </th>
+                                            <td>{{ $user->name }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Birthdate</th>
-                                            <td>20 July, 1992</td>
+                                            <td>{{ \Carbon\Carbon::parse($user->birthdate)->format('d F, Y') }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Gender</th>
-                                            <td>Male</td>
+                                            <td>{{ $user->gender }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Country</th>
-                                            <td>United States</td>
+                                            <td>{{ $user->country }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">City</th>
-                                            <td>New York</td>
+                                            <td>{{ $user->city }}</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" class="uppercase">Passion</th>
-                                            <td>Sport</td>
+                                            <td>Sports</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -107,7 +110,8 @@
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <th scope="row" width="300" class="uppercase">Height</th>
+                                            <th scope="row" width="300" class="uppercase">
+                                                Height</th>
                                             <td>5 feet 10 inch</td>
                                         </tr>
                                         <tr>
@@ -126,7 +130,8 @@
                                 <table class="table">
                                     <tbody>
                                         <tr>
-                                            <th scope="row" width="300" class="uppercase">Primary Language</th>
+                                            <th scope="row" width="300" class="uppercase">
+                                                Primary Language</th>
                                             <td>Newari</td>
                                         </tr>
                                         <tr>
@@ -217,12 +222,16 @@
                         <div class="col-12 col-md-6 col-lg-4 col-xl-12">
                             <div class="block-primary block-primary--collapsed mb-4">
                                 <a href="#">
-                                    <div class="block-primary__heading">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    <div class="block-primary__heading">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing
                                     </div>
                                     <div class="block-primary__body">
-                                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, minus!
-                                            Alias cumque consectetur molestias sequi illum inventore iure natus at voluptas,
-                                            est ad suscipit molestiae adipisci pariatur obcaecati ipsam dicta...</small>
+                                        <small>Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit. Provident, minus!
+                                            Alias cumque consectetur molestias sequi illum inventore
+                                            iure natus at voluptas,
+                                            est ad suscipit molestiae adipisci pariatur obcaecati
+                                            ipsam dicta...</small>
                                     </div>
                                 </a>
                             </div>
@@ -230,12 +239,16 @@
                         <div class="col-12 col-md-6 col-lg-4 col-xl-12">
                             <div class="block-primary block-primary--collapsed mb-4">
                                 <a href="#">
-                                    <div class="block-primary__heading">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    <div class="block-primary__heading">Lorem ipsum dolor sit amet
+                                        consectetur adipisicing
                                     </div>
                                     <div class="block-primary__body">
-                                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, minus!
-                                            Alias cumque consectetur molestias sequi illum inventore iure natus at voluptas,
-                                            est ad suscipit molestiae adipisci pariatur obcaecati ipsam dicta...</small>
+                                        <small>Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit. Provident, minus!
+                                            Alias cumque consectetur molestias sequi illum inventore
+                                            iure natus at voluptas,
+                                            est ad suscipit molestiae adipisci pariatur obcaecati
+                                            ipsam dicta...</small>
                                     </div>
                                 </a>
                             </div>

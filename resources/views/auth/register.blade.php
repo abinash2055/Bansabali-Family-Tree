@@ -51,20 +51,6 @@
                                     name="password_confirmation" required>
                             </div>
 
-                            <!-- Gender -->
-                            <div class="mb-4">
-                                <label for="gender" class="form-label">Gender</label>
-                                <select class="form-control form-control-lg" id="gender" name="gender" required>
-                                    <option value="">Select Gender</option>
-                                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
-                                    <option value="other" {{ old('gender') == 'other' ? 'selected' : '' }}>Other</option>
-                                </select>
-                                @error('gender')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-
                             <!-- Phone Number -->
                             <div class="mb-4">
                                 <label for="number" class="form-label ">Phone Number</label>
